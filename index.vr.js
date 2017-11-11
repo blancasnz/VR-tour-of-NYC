@@ -1,35 +1,60 @@
 import React from 'react';
 import {
   AppRegistry,
-  asset,
-  Pano,
-  Text,
-  View,
+  View
 } from 'react-vr';
-import FadeInView from './test1.vr.js';
+import Canvas from './components/canvas';
+import UI from './components/ui'
+
+const Config = [
+  {
+    key: 0,
+    imageSrc: 'sunset.jpg',
+    buttonImageSrc: 'freedom-tower.jpg',
+    text: 'sunset'
+  },
+  {
+    key: 1,
+    imageSrc: 'water-lillies.jpg',
+    buttonImageSrc: 'water-lillies.jpg',
+    text: 'water-lillies'
+  },
+  {
+    key: 2,
+    imageSrc: 'green-img.png',
+    buttonImageSrc: 'green-img.png',
+    text: 'green'
+  },
+  {
+    key: 3,
+    imageSrc: 'nyc.jpg',
+    buttonImageSrc: 'freedom-tower.jpg',
+    text: 'nyc'
+  }
+];
 
 export default class WelcomeToVR extends React.Component {
+
+  constructor() {
+    super();
+
+    this.state = {
+      src: 'water-lillies.jpg',
+      text: 'water-lillies'
+    };
+  }
+
   render() {
     return (
       <View>
-        {<Pano source={asset('water-lillies.jpg')} />}
-        <FadeInView>
-          <Text
-            style={{
-              backgroundColor: '#b7a7c6',
-              fontSize: 0.3,
-              fontWeight: '200',
-              layoutOrigin: [0.5, 0.5],
-              paddingLeft: 0.2,
-              paddingRight: 0.2,
-              textAlign: 'center',
-              textAlignVertical: 'center',
-              transform: [{ translate: [0, 0, -3] }],
-            }}>
-            Monet's Water Lillies
-        </Text>
-        </FadeInView>
-
+        <Canvas
+          src={this.state.src}
+          text={this.state.text}
+        />
+        <UI
+          buttonConfig={Config}
+          onClick={key => { this.setState({ src: Config[key].imageSrc, text: Config[key].text }); }}
+        />
       </View>
     );
   }
@@ -37,32 +62,3 @@ export default class WelcomeToVR extends React.Component {
 
 AppRegistry.registerComponent('WelcomeToVR', () => WelcomeToVR);
 
-// import React from 'react';
-// import {
-//   AppRegistry,
-//   View
-// } from 'react-vr';
-// import Canvas from '../components/canvas';
-
-// export default class WelcomeToVr extends React.Component {
-
-//   constructor() {
-//     super();
-
-//     this.state = {
-//       src: 'water-lillies.jpg',
-//     };
-//   }
-
-//   render() {
-//     return (
-//       <View>
-//         <Canvas
-//           src={this.state.src}
-//         />
-//       </View>
-//     );
-//   }
-// }
-
-// AppRegistry.registerComponent('WelcomeToVr', () => WelcomeToVr);
