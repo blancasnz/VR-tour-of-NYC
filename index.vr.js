@@ -9,28 +9,29 @@ import UI from './components/ui'
 const Config = [
   {
     key: 0,
-    imageSrc: 'sunset.jpg',
-    buttonImageSrc: 'freedom-tower.jpg',
-    text: 'sunset'
+    imageSrc: 'GrandCentral1.JPG',
+    buttonImageSrc: 'GC.JPG',
+    text: 'Grand Central'
   },
   {
     key: 1,
-    imageSrc: 'water-lillies.jpg',
-    buttonImageSrc: 'water-lillies.jpg',
-    text: 'water-lillies'
+    imageSrc: 'CentralPark1.JPG',
+    buttonImageSrc: 'LN.JPG',
+    text: 'Central Park'
   },
   {
     key: 2,
-    imageSrc: 'green-img.png',
-    buttonImageSrc: 'green-img.png',
-    text: 'green'
+    imageSrc: 'TimesSquare2.JPG',
+    buttonImageSrc: 'TS.JPG',
+    text: 'Times Square'
   },
   {
     key: 3,
-    imageSrc: 'nyc.jpg',
-    buttonImageSrc: 'freedom-tower.jpg',
-    text: 'nyc'
+    imageSrc: 'CentralPark2.JPG',
+    buttonImageSrc: 'GreatLawn.JPG',
+    text: 'Great Lawn'
   }
+
 ];
 
 export default class WelcomeToVR extends React.Component {
@@ -39,8 +40,8 @@ export default class WelcomeToVR extends React.Component {
     super();
 
     this.state = {
-      src: 'water-lillies.jpg',
-      text: 'water-lillies'
+      src: 'CentralPark1.JPG',
+      text: 'Central Park'
     };
   }
 

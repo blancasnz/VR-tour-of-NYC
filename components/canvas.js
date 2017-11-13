@@ -29,8 +29,8 @@ class Canvas extends React.Component {
         <FadeInView>
           <Text
             style={{
-              backgroundColor: '#b7a7c6',
-              fontSize: 0.3,
+              backgroundColor: 'rgba(255,255,255,0.2)',
+              fontSize: 0.2,
               fontWeight: '200',
               layoutOrigin: [0.5, 0.5],
               paddingLeft: 0.2,
